@@ -14,8 +14,20 @@ const response = await fetch(url).then((response) =>
 ---
 
 
-<div class="border-2 border-white w-52 p-5">
-    <h1>{response.id}</h1>
+<div class="border-2 border-white w-52 p-5 flex flex-col justify-normal min-w-[400] rounded-2xl">
+  <h1>{response.id}</h1>
+  <span>
+    <a href={response.sprites.front_default} target="_blank" >
+      <Image src={response.sprites.front_default} alt="A bird." width="300" height="300" />
+    </a>
+  </span>
+  <span>
     <h6>{name}</h6>
-    <Image src={response.sprites.front_default} alt="A bird." width="300" height="300" />
+    <ul>
+      {response.types.map((type : any) => {
+        <li>{type.name}</li>
+      })}
+    </ul>
+  </span>
+    <li>{response.types[0].type.name}</li>
 </div>

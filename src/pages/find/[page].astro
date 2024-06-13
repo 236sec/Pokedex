@@ -34,7 +34,7 @@ export async function getStaticPaths({ paginate } : any) {
   const allPokemon = result.results;
 
   // Return a paginated collection of paths for all posts
-  return paginate(allPokemon, { pageSize: 10 });
+  return paginate(allPokemon, { pageSize: 12 });
 }
 interface Props {
   page: Page<{ name: string; url: string }>;
